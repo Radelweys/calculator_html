@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Flask</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .kalkulator-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 350px;
+            text-align: center;
+        }
+        h2 { margin-bottom: 20px; color: #333; }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box; 
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover { background-color: #218838; }
+        .hasil-box {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+        .error { color: red; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="kalkulator-card">
+        <h2>Kalkulator Flask</h2>
+        
+        <form method="POST">
+            <input type="number" name="angka1" placeholder="Angka Pertama" step="any" required>
+            
+            <select name="operasi">
+                <option value="tambah">Tambah (+)</option>
+                <option value="kurang">Kurang (-)</option>
+                <option value="kali">Kali (×)</option>
+                <option value="bagi">Bagi (÷)</option>
+            </select>
+            
+            <input type="number" name="angka2" placeholder="Angka Kedua" step="any" required>
+            
+            <button type="submit">Hitung</button>
+        </form>
+
+        {% if hasil is not none %}
+            <div class="hasil-box">
+                Hasil: {{ hasil }}
+            </div>
+        {% endif %}
+
+        {% if error %}
+            <div class="error">
+                {{ error }}
+            </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
