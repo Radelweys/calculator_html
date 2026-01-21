@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.box {
+    display: flex;
+    flex-direction: column; /* gambar di atas, teks di bawah */
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.box img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+}

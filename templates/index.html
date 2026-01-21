@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="box">
+        <img src="{{ url_for('static', filename='images/hero.png') }}" alt="Hero Image">
+        <h1>Hallo Dunia</h1>
+        <p>Ini menggunakan Flexbox + Gambar</p>
+    </div>
+
+</body>
+</html>
